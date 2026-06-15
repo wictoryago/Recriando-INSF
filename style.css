@@ -3,9 +3,28 @@ body {
     background-size: 100% 100%;     
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: scroll;  
+    background-attachment: scroll; 
     margin: 0;                     
     width: 100vw;                   
     height: 100vh;                  
-    overflow-x: hidden;             
+    overflow-x: hidden; 
+            
+}
+
+.Menunu{
+    display: flex;
+    justify-content: center; 
+}
+
+.Menu{
+    width: 80%;
+    height: 100px;
+    background-color: #0041e6;
+    background-image: url(diagmonds.png);
+    border-radius: 30px;
+    border: 2.2px solid #ffffff;
+}
+
+.logo{
+    width: 75px;
 }
