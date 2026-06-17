@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url('backzito.webp');
     background-size: 100% 100%;     
@@ -7,11 +13,28 @@ body {
     margin: 0;                     
     width: 100vw;                   
     height: 100vh;                  
-
     overflow-x: hidden;             
 }
 
+.logo{
+    width: 75px;
+}
 
+.Menunu{
+    display: flex;
+    justify-content: center; 
+}
+
+.Menu{
+    width: 80%;
+    height: 100px;
+    background-color: #0041e6;
+    background-image: url(diagmonds.png);
+    border-radius: 30px;
+    border: 2.2px solid #ffffff;
+}
+
+/* PARTE ABAIXO DO MENU */
 .padaria{
 
 align-self: center;
@@ -34,27 +57,3 @@ margin-left: 25rem;
 margin-top: 3rem;
 border-radius: 1.5rem;
 }
-
-
-    overflow-x: hidden; 
-            
-}
-
-.Menunu{
-    display: flex;
-    justify-content: center; 
-}
-
-.Menu{
-    width: 80%;
-    height: 100px;
-    background-color: #0041e6;
-    background-image: url(diagmonds.png);
-    border-radius: 30px;
-    border: 2.2px solid #ffffff;
-}
-
-.logo{
-    width: 75px;
-}
-
