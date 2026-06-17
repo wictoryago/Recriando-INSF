@@ -1,185 +1,84 @@
 *{
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html{
-
     font-size: 10px;
-
 }
 
 body{
-
     background-image: url('backzito.webp');
-    background-size: 100% 100%;     
+    background-size: cover;     
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: scroll; 
+    background-attachment: fixed; 
     margin: 0;                     
     width: 100vw;                   
-    height: 100vh;                  
+    min-height: 100vh;                  
     overflow-x: hidden;             
 }
 
 .tittlee{
-
     color: white;
     font-family: "Saira Semi Condensed", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-  font-size: 3rem;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3.5rem;
     display: flex;
     justify-content: center;
-    
-
 }
 
-.fath{
-
+.fath {
     position: relative;
     left: 18rem;
     width: 100rem;
-    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parte {
+    width: 33.33%; 
     display: flex;
     justify-content: center;
-    gap: 8rem;
-    background-color: aqua;
-
 }
 
-.parte1 img{
-
-    width: 20rem;
-
-}
-
-.parte1 p{
-
-    font-size: 2rem;
-    color: white;
-
-}
-
-.parte1{
-
-    width: 20rem;
-    display: flex;
-    align-items: center;
-
-}
-
-.cont1{
-
-    
-    width: 20rem;
-    height: 18rem;
+.cont {
+    width: 22rem;
     text-align: center;
-
-}
-
-.parte2 img{
-
-    width: 20rem;
-
-}
-
-.parte2 p{
-
-    font-size: 2rem;
-    color: white;
-
-}
-
-.parte2{
-
-
-    width: 20rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-
+    gap: 1.5rem;
 }
 
-.cont2{
-
-    
+.parte img {
     width: 20rem;
-    height: 18rem;
-    text-align: center;
-
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-.parte3 img{
-
-    width: 20rem;
-
-}
-
-.parte3 p{
-
-    font-size: 2rem;
+.parte p {
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-size: 1.8rem;
     color: white;
-
+    font-weight: 400;
 }
 
-.parte3{
+.botaao{
 
-    width: 20rem;
-    display: flex;
-    align-items: center;
-
-}
-
-.cont3{
-
+    background: #EFB653;
+    color: #1D3280;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 1.2rem;
+    cursor: pointer;
+    margin: 4rem auto;
     
-    width: 20rem;
-    height: 18rem;
-    text-align: center;
 
-}
-
-.parte4 img,
-.parte5 img,
-.parte6 img,
-.parte7 img,
-.parte8 img,
-.parte9 img,
-.parte10 img{
-    width: 20rem;
-}
-
-.parte4 p,
-.parte5 p,
-.parte6 p,
-.parte7 p,
-.parte8 p,
-.parte9 p,
-.parte10 p{
-    font-size: 2rem;
-    color: white;
-}
-
-.parte4,
-.parte5,
-.parte6,
-.parte7,
-.parte8,
-.parte9,
-.parte10{
-    height: 25rem;
-    display: flex;
-}
-
-.cont4,
-.cont5,
-.cont6,
-.cont7,
-.cont8,
-.cont9,
-.cont10{
-    width: 25rem;
 }
