@@ -7,6 +7,35 @@ body {
     margin: 0;                     
     width: 100vw;                   
     height: 100vh;                  
+
+    overflow-x: hidden;             
+}
+
+
+.padaria{
+
+align-self: center;
+}
+
+.pao{
+text-align: center;
+color: white;
+}
+
+.pao2{
+ text-align: center ;
+color: white;
+
+}
+
+.padoca{
+
+margin-left: 25rem;
+margin-top: 3rem;
+border-radius: 1.5rem;
+}
+
+
     overflow-x: hidden; 
             
 }
@@ -28,3 +57,4 @@ body {
 .logo{
     width: 75px;
 }
+
