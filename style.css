@@ -7,13 +7,7 @@
 body {
     background-image: url('backzito.webp');
     background-size: 100% 100%;     
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: scroll; 
-    margin: 0;                     
-    width: 100vw;                   
-    height: 100vh;                  
-    overflow-x: hidden;             
+    background-repeat: repeat;            
 }
 
 .logo{
@@ -42,17 +36,22 @@ align-self: center;
 
 .pao{
 text-align: center;
-color: white;
+color: #EFB653;
 margin-top: 30px;
 font-size: 40px;
+font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 
 }
 
 .pao2{
- text-align: center ;
+ text-align: center;
 color: white;
 font-size: 17px;
 margin-top: 40px;
+font-family: "Saira Semi Condensed", sans-serif;
 
 }
 
@@ -64,3 +63,117 @@ border-radius: 15px;
 
 }
 
+html{
+    font-size: 10px;
+}
+
+
+.tittlee{
+    color: #EFB653;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.fath {
+    position: relative;
+    left: 18rem;
+    width: 100rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parte {
+    width: 33.33%; 
+    display: flex;
+    justify-content: center;
+}
+
+.cont {
+    width: 22rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.parte img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.parte p {
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 400;
+}
+
+.botaao{
+
+    background: #EFB653;
+    color: #1D3280;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 1.2rem;
+    cursor: pointer;
+    margin: 4rem auto;
+    
+
+}
+
+.botaao:hover{
+
+    transform: scale(1.1);
+    transition: 0.3s;
+
+}
+
+.containerr{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.anuncioo{
+    height: 30rem;
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.tituloo{
+
+    color: #EFB653;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 4rem;
+
+}
+
+ul{
+
+   color: #ffffff;
+   font-size: 2.3rem;
+   font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  text-align: center;
+  list-style: inside;
+
+}
