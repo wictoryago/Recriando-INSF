@@ -1,179 +1,448 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
 body {
     background-image: url('backzito.webp');
-    background-size: 100% 100%;     
-    background-repeat: repeat;            
+    background-repeat: repeat;
+    background-color: #1a1a1a;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
 }
 
-.logo{
-    width: 75px;
+/* ==================== ANIMAÇÕES ==================== */
+@keyframes brilhando {
+    10% {
+        box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.322);
+        border-radius: 90px;
+        background-color: rgba(0, 255, 234, 0.26);
+    }
+    60% {
+        box-shadow: 0px 0px 60px 15px rgb(140, 255, 211);
+        border-radius: 90px;
+        background-color: rgba(26, 255, 148, 0.507);
+    }
+    100% {
+        box-shadow: 0px 0px 70px 30px rgb(0, 195, 255);
+        border-radius: 90px;
+        background-color: rgb(93, 202, 253);
+    }
 }
 
-.Menunu{
+/* ==================== NAVEGAÇÃO (ALTERADA: LIQUID GLASS) ==================== */
+.Menunu {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
 }
 
-.Menu{
-    width: 80%;
-    height: 100px;
-    background-color: #0041e6;
-    background-image: url(diagmonds.png);
-    border-radius: 30px;
-    border: 2.2px solid #ffffff;
-}
-
-/* PARTE ABAIXO DO MENU */
-.padaria{
-
-align-self: center;
-}
-
-.pao{
-text-align: center;
-color: #EFB653;
-margin-top: 30px;
-font-size: 40px;
-font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-
-}
-
-.pao2{
- text-align: center;
-color: white;
-font-size: 17px;
-margin-top: 40px;
-font-family: "Saira Semi Condensed", sans-serif;
-
-}
-
-.padoca{
-
-margin-left: 400px;
-margin-top: 30px;
-border-radius: 15px;
-
-}
-
-html{
-    font-size: 10px;
-}
-
-
-.tittlee{
-    color: #EFB653;
-    font-family: "Saira Semi Condensed", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 3.5rem;
+.Menu {
+    width: 92%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 115px; /* Ligeiramente maior para acomodar os novos botões */
+    background-color: rgba(0, 65, 230, 0.15);
+    background-image: url('Imagens/Gemini_Generated_Image_13gl5f13gl5f13gl.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 32px;
+    
+    /* Efeito Base Liquid Glass (Borda semi-transparente e reflexo interno) */
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(15px) saturate(160%);
+    -webkit-backdrop-filter: blur(15px) saturate(160%);
+    
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 35px;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    
+    /* Sombra externa profunda e reflexo líquido interno */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Espaçamento do conteúdo ajustado para o tamanho do novo menu */
+.page-content {
+    padding-top: 165px; 
+}
+
+.background-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Gradiente sutil simulando fluidez dentro do vidro */
+    background: linear-gradient(135deg, rgba(0, 157, 255, 0.75), rgba(0, 90, 255, 0.6));
+    backdrop-filter: blur(10px);
+    border: solid 1.5px rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    padding: 12px 25px;
+    gap: 15px;
+    box-shadow: 0px 8px 25px rgba(0, 157, 255, 0.3),
+                inset 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+    width: 65px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    animation: brilhando 3.5s infinite alternate;
+}
+
+.background-blue p {
+    font-family: "Ruwudu", serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.div-botões {
+    display: flex;
+    gap: 22px; /* Mais espaço para os botões encorpados */
+    flex-wrap: wrap;
     justify-content: center;
 }
 
+/* BOTÕES MAIORES COM EFEITO GOOEY/LIQUID GLASS */
+.btn-vidro {
+    display: inline-block;
+    font-size: 1.9rem; /* Aumentado para maior legibilidade e imponência */
+    color: #EFB653; /* Resgatado o dourado original que brilha no vidro */
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 38px; /* Botões visivelmente maiores e mais robustos */
+    border-radius: 45px;
+    
+    /* Preenchimento simulando vidro gelatinoso/líquido */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
+    border: solid 1.5px rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 
+                inset 0 0 15px rgba(255, 255, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-vidro span {
+    display: inline-block;
+    transition: transform 0.4s;
+}
+
+.btn-vidro:hover {
+    /* Efeito de expansão líquida com glow azul brilhante ao passar o mouse */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.1));
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 195, 255, 0.6), 
+                inset 0 0 20px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.08) translateY(-3px); /* Flutuação suave */
+}
+
+.btn-vidro:hover span {
+    transform: scale(1.05);
+}
+
+.login-sessao {
+    background: linear-gradient(135deg, rgba(31, 99, 200, 0.55), rgba(20, 70, 160, 0.45));
+    border: solid 2px rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    border-radius: 26px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-sessao a {
+    font-family: "Alan Sans", sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.login-sessao a:hover {
+    border-radius: 15px;
+    background-color: rgba(65, 169, 255, 0.7);
+    box-shadow: 0 0 15px rgba(65, 169, 255, 0.5);
+}
+
+.login-sessao img {
+    width: 45px;
+}
+
+/* ==================== HERO SECTION ==================== */
+.containerr {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.anuncioo {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.tituloo {
+    color: #EFB653;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.anuncioo ul {
+    color: #ffffff;
+    font-size: 2rem;
+    list-style: none;
+    line-height: 1.6;
+}
+
+.botaao {
+    background: #EFB653;
+    color: #1D3280;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.botaao:hover {
+    transform: scale(1.05);
+    background: #ffd079;
+}
+
+.botao-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px 0;
+}
+
+/* ==================== CURSOS ==================== */
+.tittlee {
+    color: #EFB653;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 40px 20px;
+}
+
 .fath {
-    position: relative;
-    left: 18rem;
-    width: 100rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .parte {
-    width: 33.33%; 
+    width: 100%;
+    max-width: 300px;
     display: flex;
     justify-content: center;
 }
 
 .cont {
-    width: 22rem;
-    text-align: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    text-align: center;
+    gap: 15px;
 }
 
 .parte img {
-    width: 20rem;
-    height: 20rem;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
     border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.parte img:hover {
+    transform: translateY(-5px);
 }
 
 .parte p {
     font-family: "Saira Semi Condensed", sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
 }
 
-.botaao{
-
-    background: #EFB653;
-    color: #1D3280;
-    font-family: "Saira Semi Condensed", sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    padding: 1.2rem;
-    cursor: pointer;
-    margin: 4rem auto;
-    
-
-}
-
-.botaao:hover{
-
-    transform: scale(1.1);
-    transition: 0.3s;
-
-}
-
-.containerr{
-
+/* ==================== PADARIA ==================== */
+.padaria {
     display: flex;
-    justify-content: center;
-
-}
-
-.anuncioo{
-    height: 30rem;
-    width: 50rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 40px;
 }
 
-.tituloo{
-
+.pao {
     color: #EFB653;
-    font-family: "Saira Semi Condensed", sans-serif;
-    font-weight: 800;
-    font-style: normal;
     font-size: 4rem;
-
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-ul{
+.sizee {
+    max-width: 800px;
+    text-align: center;
+}
 
-   color: #ffffff;
-   font-size: 2.3rem;
-   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  text-align: center;
-  list-style: inside;
+.pao2 {
+    color: white;
+    font-size: 2rem;
+    line-height: 1.6;
+    font-family: "Saira Semi Condensed", sans-serif;
+}
 
+.padoca {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ==================== FOOTER ==================== */
+.yagogay {
+    width: 100%;
+    background: #dca84d;
+    margin-top: 60px;
+    padding: 50px 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.conclusão, .conclusão2 {
+    color: #1D3280;
+    min-width: 250px;
+}
+
+.v1, .v2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-family: "Saira Semi Condensed", sans-serif;
+}
+
+.v3 {
+    list-style: none;
+    color: #1D3280;
+    line-height: 1.8;
+    font-size: 1.8rem;
+}
+
+.Frei {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1D3280;
+    text-align: center;
+    gap: 15px;
+}
+
+.freimg {
+    width: 100px;
+    object-fit: contain;
+}
+
+.Frei h2 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+/* ==================== MEDIA QUERIES (RESPONSIVIDADE) ==================== */
+@media (max-width: 1024px) {
+    .Menu {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+        position: relative;
+        border-radius: 20px;
+        width: 95%;
+    }
+    .page-content { padding-top: 30px; }
+    
+    .background-blue, .div-botões, .login-sessao {
+        width: 100%;
+    }
+    
+    .div-botões {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 8px; }
+    
+    .background-blue p { 
+        display: none; 
+    }
+    .background-blue { justify-content: center; }
+    
+    .div-botões {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .btn-vidro {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .yagogay {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .conclusão, .conclusão2 {
+        text-align: center;
+    }
+    
+    .parte {
+        max-width: 90%;
+    }
 }
