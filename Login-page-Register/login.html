@@ -1,28 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Entrar - Instituto Social Nossa Senhora de Fátima</title>
+    <link rel="icon" type="image/webp" href="../Imagens/Logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Superstyle.css">
 </head>
 <body>
-    <header class="Menunu">
-        <nav class="Menu">
-            <div class="background-blue">
-                <img class="logo" src="../Imagens/Logo.webp" alt="Logo Instituto">
-                <p>Instituto Social <br>Nossa Senhora de Fátima</p>
+
+    <header class="header-nav">
+        <nav class="nav-container">
+            <a href="../Index.html" class="brand-logo">
+                <img src="../Imagens/Logo.webp" alt="Logo Instituto" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">Instituto Social</span>
+                    <span class="brand-subtitle">Nossa Senhora de Fátima</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="../Index.html" class="nav-link">Início</a>
+                <a href="../ADM/Formulario.html" class="nav-link">Cursos</a>
+                <a href="../Index.html#contato" class="nav-link">Contato</a>
             </div>
-            <div class="div-botões">
-                <a class="btn-vidro" href="../Index.html"><span>Início</span></a>
-                <a class="btn-vidro" href="../ADM/Formulario.html"><span>Cursos</span></a>
-                <a class="btn-vidro" href="#"><span>Ajuda</span></a>
-            </div>
-            <div class="login-sessao">
-                <div><a href="login.html">Entrar</a></div>
-                <div><img src="../Imagens/do-utilizador.webp" alt="Usuário"></div>
+            <div class="nav-actions">
+                <a href="register.html" class="btn-login-nav">
+                    <img src="../Imagens/do-utilizador.webp" alt="Usuário" class="user-icon">
+                    <span>Cadastrar</span>
+                </a>
             </div>
         </nav>
     </header>
+
+    <main class="main-content auth-page-wrapper">
+        <div class="auth-grid">
+            <div class="auth-info-side">
+                <span class="section-tag">ÁREA DO ALUNO & COMUNIDADE</span>
+                <h1>Acesse sua conta para acompanhar seus cursos</h1>
+                <p>Acesse conteúdos exclusivos, cronograma das aulas e notícias dos projetos sociais do Instituto.</p>
+            </div>
+
+            <div class="auth-card-side">
+                <div class="glass-card">
+                    <div class="auth-card-header">
+                        <h2>Seja Bem-vindo</h2>
+                        <p>Informe suas credenciais para continuar</p>
+                    </div>
+
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="login-email" class="form-label">E-mail</label>
+                            <input type="email" id="login-email" class="form-input" placeholder="seuemail@dominio.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password" class="form-label">Senha</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="login-password" class="form-input" placeholder="••••••••" required>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> Lembrar-me
+                            </label>
+                            <a href="#" class="form-link">Esqueceu a senha?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Entrar na Conta</button>
+                    </form>
+
+                    <p class="auth-footer-text">
+                        Ainda não possui uma conta? <a href="register.html" class="form-link">Cadastre-se aqui</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>© 2026 Instituto Social Nossa Senhora de Fátima. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

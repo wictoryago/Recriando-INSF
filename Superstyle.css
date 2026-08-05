@@ -1,0 +1,523 @@
+/* ==========================================================================
+   DESIGN SYSTEM - FORMULÁRIOS, LOGIN E REGISTRO
+   ========================================================================== */
+
+:root {
+    --primary-blue: #0a2540;
+    --brand-blue: #1d3280;
+    --bright-blue: #0066ff;
+    --accent-gold: #efb653;
+    --gold-hover: #ffd079;
+    --bg-dark: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --input-bg: rgba(255, 255, 255, 0.07);
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --font-heading: 'Saira Semi Condensed', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 50px;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 10px 30px rgba(239, 182, 83, 0.25);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12rem 2rem 6rem 2rem;
+}
+
+/* ==========================================================================
+   HEADER / NAVBAR COMPARTILHADA
+   ========================================================================== */
+
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-soft);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-gold);
+}
+
+.btn-login-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, rgba(29, 50, 128, 0.8), rgba(0, 102, 255, 0.6));
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-login-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+}
+
+.user-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   BOTÕES E CARDS DE VIDRO
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2.8rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    gap: 0.8rem;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background: var(--gold-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* CARD PRINCIPAL - AGORA CENTRALIZADO */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius-lg);
+    padding: 4rem;
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   CAMPOS E FORMULÁRIOS
+   ========================================================================== */
+
+.form-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form-label {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.3rem 1.6rem;
+    font-size: 1.5rem;
+    font-family: var(--font-body);
+    color: #fff;
+    background-color: var(--input-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(239, 182, 83, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--accent-gold);
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.form-link {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.form-link:hover {
+    text-decoration: underline;
+    color: var(--gold-hover);
+}
+
+/* ==========================================================================
+   LAYOUTS DE AUTENTICAÇÃO E FORMULÁRIOS
+   ========================================================================== */
+
+.auth-page-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+}
+
+.auth-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-info-side {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.auth-info-side h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    line-height: 1.15;
+    color: #fff;
+}
+
+.auth-info-side p {
+    color: var(--text-muted);
+    font-size: 1.6rem;
+}
+
+.auth-card-side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-card-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.auth-card-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.auth-card-header p {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+}
+
+.auth-footer-text {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+}
+
+.section-tag {
+    color: var(--accent-gold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.6rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    width: 100%;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+
+.site-footer {
+    background: #080d1a;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 4rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.footer-desc {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+}
+
+.footer-col h4 {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-list, .footer-links {
+    list-style: none;
+}
+
+.contact-list li, .footer-links li {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .auth-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-info-side {
+        text-align: center;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .glass-card {
+        padding: 2.5rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

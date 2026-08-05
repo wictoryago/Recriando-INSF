@@ -3,85 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Inscrição</title>
-    <link rel="stylesheet" href="../style.css"> 
-    <link rel="stylesheet" href="Formulario.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Ruwudu:wght@600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
-    </style>
+    <title>Inscrição em Cursos - Instituto Social Nossa Senhora de Fátima</title>
     <link rel="icon" type="image/webp" href="../Imagens/Logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Superstyle.css">
 </head>
 <body>
 
-    <header class="Menunu">
-        <nav class="Menu">
-            <div class="background-blue">
-                <img class="logo" src="../Imagens/Logo.webp" alt="Logo Instituto">
-                <p>Instituto Social <br>Nossa Senhora de Fátima</p>
+    <header class="header-nav">
+        <nav class="nav-container">
+            <a href="../Index.html" class="brand-logo">
+                <img src="../Imagens/Logo.webp" alt="Logo Instituto" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">Instituto Social</span>
+                    <span class="brand-subtitle">Nossa Senhora de Fátima</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="../Index.html" class="nav-link">Início</a>
+                <a href="Formulario.html" class="nav-link active">Cursos</a>
+                <a href="../Index.html#contato" class="nav-link">Contato</a>
             </div>
-            <div class="div-botões">
-                <a class="btn-vidro" href="../Index.html"><span>Início</span></a>
-                <a class="btn-vidro" href="#"><span>Cursos</span></a>
-                <a class="btn-vidro" href="#"><span>Ajuda</span></a>
-            </div>
-            <div class="login-sessao">
-                <div><a href="../Login-page-Register/login.html">Entrar</a></div>
-                <div><img src="../Imagens/do-utilizador.webp" alt="Usuário"></div>
+            <div class="nav-actions">
+                <a href="../Login-page-Register/login.html" class="btn-login-nav">
+                    <img src="../Imagens/do-utilizador.webp" alt="Usuário" class="user-icon">
+                    <span>Entrar</span>
+                </a>
             </div>
         </nav>
     </header>
 
-    <main class="page-content">
-        <section class="form-container-wrapper">
-            <div class="form-card">
-                <h1 class="tituloo" style="-webkit-text-stroke: 1px #000; text-shadow: none;">Formulário de <span style="color: #EFB653;">Inscrição</span></h1>
-                <p class="form-subtitle">Preencha suas informações para concluir sua inscrição na Feira de Profissões</p>
-                
-                <form action="#" method="POST" class="inscricao-form">
-                    
-                    <div class="input-group">
-                        <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+    <main class="main-content" style="padding-top: 14rem; padding-bottom: 8rem;">
+        <div class="section-container" style="max-width: 800px; padding: 0 2rem;">
+            <div class="section-header">
+                <span class="section-tag">FORMAÇÃO PROFISSIONAL</span>
+                <h1 class="section-title">Formulário de Inscrição</h1>
+                <p class="section-subtitle">Preencha suas informações para garantir sua vaga nos cursos gratuitos ou na Feira de Profissões.</p>
+            </div>
+
+            <div class="glass-card">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" class="form-input" placeholder="Digite seu nome completo" required>
                     </div>
 
-                    <div class="input-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+                        <div class="form-group">
+                            <label for="telefone" class="form-label">Telefone / WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(11) 90000-0000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="seuemail@dominio.com" required>
+                        </div>
                     </div>
 
-                    <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="seusmail@dominio.com" required>
+                    <div class="form-group">
+                        <label for="como-soube" class="form-label">Como ficou sabendo sobre nossos cursos?</label>
+                        <input type="text" id="como-soube" name="como_soube" class="form-input" placeholder="Ex: Amigos, Redes Sociais, Cartaz">
                     </div>
 
-                    <div class="input-group">
-                        <label for="como-soube">Como ficou sabendo sobre a Feira?</label>
-                        <input type="text" id="como-soube" name="como_soube" placeholder="Familiar/amigo/Redes Sociais">
+                    <div class="form-group">
+                        <label for="curso" class="form-label">Curso de Interesse</label>
+                        <input type="text" id="curso" name="curso" class="form-input" placeholder="Ex: Técnico em Informática, Inglês, Eletromecânica" required>
                     </div>
 
-                    <div class="input-group">
-                        <label for="horario">Horário previsto de chegada</label>
-                        <input type="text" id="horario" name="horario" placeholder="Digite sua previsão de chegada">
+                    <div class="form-group">
+                        <label for="aluno-frei" class="form-label">Você é ou já foi aluno do Frei?</label>
+                        <input type="text" id="aluno-frei" name="aluno_frei" class="form-input" placeholder="Sim / Não">
                     </div>
 
-                    <div class="input-group">
-                        <label for="curso">Você possui interesse em algum curso?</label>
-                        <input type="text" id="curso" name="curso" placeholder="Digite o curso">
+                    <div style="margin-top: 3rem; text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 320px;">Enviar Inscrição</button>
                     </div>
-
-                    <div class="input-group">
-                        <label for="aluno-frei">Você é ou já foi aluno do Frei?</label>
-                        <input type="text" id="aluno-frei" name="aluno_frei" placeholder="Digite sua resposta">
-                    </div>
-
-                    <button type="submit" class="botaao btn-enviar">Enviar inscrição</button>
                 </form>
             </div>
-        </section>
+        </div>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="../Imagens/Logo.webp" alt="Logo">
+                    <h3>Instituto Social<br>Nossa Senhora de Fátima</h3>
+                </div>
+                <p class="footer-desc">Transformando vidas por meio da educação profissional, fé e acolhimento comunitário desde 1971.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="contact-list">
+                    <li>📞 (11) 3798-5037 - Secretaria</li>
+                    <li>📱 (11) 96398-6252 - WhatsApp</li>
+                    <li>✉️ secretaria@acaonsfatima.org.br</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="../Index.html">Início</a></li>
+                    <li><a href="Formulario.html">Cursos</a></li>
+                    <li><a href="../Login-page-Register/login.html">Área do Aluno</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Apoie Nossa Causa</h4>
+                <p>Sua ajuda mantém nossos projetos ativos.</p>
+                <a href="#" class="btn btn-primary" style="padding: 0.8rem 1.8rem; font-size: 1.3rem;">Faça uma Doação</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Instituto Social Nossa Senhora de Fátima. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
