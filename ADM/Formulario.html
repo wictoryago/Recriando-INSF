@@ -69,12 +69,24 @@
 
                     <div class="form-group">
                         <label for="curso" class="form-label">Curso de Interesse</label>
-                        <input type="text" id="curso" name="curso" class="form-input" placeholder="Ex: Técnico em Informática, Inglês, Eletromecânica" required>
+                        <select id="curso" name="curso" class="form-input" required>
+                            <option value="" disabled selected>Selecione um curso da lista...</option>
+                            <option value="Assistente Administrativo">Curso de Assistente Administrativo</option>
+                            <option value="Ajustador Mecânico">Curso de Ajustador Mecânico</option>
+                            <option value="Torneiro Mecânico">Curso de Torneiro Mecânico</option>
+                            <option value="Assistente de Recursos Humanos">Curso de Assistente de Recursos Humanos</option>
+                            <option value="Montador e Reparador de Computadores">Curso de Montador e Reparador de Computadores</option>
+                            <option value="Instalador e Reparador de Redes">Curso de Instalador e Reparador de Redes de Computadores</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="aluno-frei" class="form-label">Você é ou já foi aluno do Frei?</label>
-                        <input type="text" id="aluno-frei" name="aluno_frei" class="form-input" placeholder="Sim / Não">
+                        <select id="aluno-frei" name="aluno_frei" class="form-input" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
                     </div>
 
                     <div style="margin-top: 3rem; text-align: center;">
