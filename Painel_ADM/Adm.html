@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Instituto Social</title>
+    <link rel="icon" type="image/webp" href="../Imagens/Logo.webp">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="Adm.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar / Menu Lateral -->
+        <aside class="sidebar">
+            <div class="brand-logo">
+                <img src="../Imagens/Logo.webp" alt="Logo" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">Admin</span>
+                    <span class="brand-subtitle">Instituto Social</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">Dashboard</a>
+                <a href="#" class="nav-item">Usuários</a>
+                <a href="../Index.html" class="nav-item back-home">Voltar ao Site</a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Visão Geral do Sistema</h2>
+                <div class="admin-profile">
+                    <span>Admin</span>
+                    <img src="../Imagens/do-utilizador.webp" alt="Admin" class="user-icon">
+                </div>
+            </header>
+
+            <!-- Métricas -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Acessos Totais</span>
+                    <strong class="metric-value">1.420</strong>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Usuários Ativos</span>
+                    <strong class="metric-value">38</strong>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Tempo Médio</span>
+                    <strong class="metric-value">14 min</strong>
+                </div>
+            </section>
+
+            <div class="dashboard-bottom">
+                <!-- Cards de Usuários -->
+                <section class="users-section">
+                    <h3 class="section-title">Últimos Registros</h3>
+                    
+                    <div class="users-list">
+                        <!-- Card 1 -->
+                        <details class="user-card">
+                            <summary class="user-summary">
+                                <div class="user-main-info">
+                                    <strong>Mariana Costa</strong>
+                                    <span class="user-time">⏱ Tempo Médio: 45 min</span>
+                                </div>
+                                <div class="user-side-info">
+                                    <span class="status-badge">Ativo</span>
+                                    <span class="arrow">▼</span>
+                                </div>
+                            </summary>
+                            <div class="user-expanded-data">
+                                <p><strong>E-mail:</strong> mariana.costa@gmail.com</p>
+                                <p><strong>Termos de Uso:</strong> Aceito</p>
+                            </div>
+                        </details>
+
+                        <!-- Card 2 -->
+                        <details class="user-card">
+                            <summary class="user-summary">
+                                <div class="user-main-info">
+                                    <strong>Roberto Almeida</strong>
+                                    <span class="user-time">⏱ Tempo Médio: 12 min</span>
+                                </div>
+                                <div class="user-side-info">
+                                    <span class="status-badge inactive">Inativo</span>
+                                    <span class="arrow">▼</span>
+                                </div>
+                            </summary>
+                            <div class="user-expanded-data">
+                                <p><strong>E-mail:</strong> roberto.almeida@hotmail.com</p>
+                                <p><strong>Termos de Uso:</strong> Aceito</p>
+                            </div>
+                        </details>
+
+                        <!-- Card 3 -->
+                        <details class="user-card">
+                            <summary class="user-summary">
+                                <div class="user-main-info">
+                                    <strong>Camila Fernandes</strong>
+                                    <span class="user-time">⏱ Tempo Médio: 1h 30min</span>
+                                </div>
+                                <div class="user-side-info">
+                                    <span class="status-badge">Ativo</span>
+                                    <span class="arrow">▼</span>
+                                </div>
+                            </summary>
+                            <div class="user-expanded-data">
+                                <p><strong>E-mail:</strong> camila.fer@yahoo.com.br</p>
+                                <p><strong>Termos de Uso:</strong> Aceito</p>
+                            </div>
+                        </details>
+
+                        <!-- Card 4 -->
+                        <details class="user-card">
+                            <summary class="user-summary">
+                                <div class="user-main-info">
+                                    <strong>Thiago Silva</strong>
+                                    <span class="user-time">⏱ Tempo Médio: 03 min</span>
+                                </div>
+                                <div class="user-side-info">
+                                    <span class="status-badge">Ativo</span>
+                                    <span class="arrow">▼</span>
+                                </div>
+                            </summary>
+                            <div class="user-expanded-data">
+                                <p><strong>E-mail:</strong> t.silva_dev@gmail.com</p>
+                                <p><strong>Termos de Uso:</strong> Aceito</p>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
