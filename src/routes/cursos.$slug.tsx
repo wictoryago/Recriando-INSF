@@ -100,9 +100,29 @@ function CourseDetail() {
         ))}
       </section>
 
+      <section className="section-shell grid gap-8 pb-14 lg:grid-cols-2">
+        <div className="glass-panel rounded-3xl p-8">
+          <h2 className="font-heading text-2xl font-bold">Perfil Profissional</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            {course.profile}
+          </p>
+        </div>
+        <div className="glass-panel rounded-3xl p-8">
+          <h2 className="font-heading text-2xl font-bold">Mercado de Trabalho</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            {course.market}
+          </p>
+          {course.availability && (
+            <p className="mt-4 rounded-xl border border-gold/30 px-4 py-3 text-sm text-gold">
+              {course.availability}
+            </p>
+          )}
+        </div>
+      </section>
+
       <section className="section-shell grid gap-8 pb-20 lg:grid-cols-2">
         <div className="glass-panel rounded-3xl p-8">
-          <h2 className="font-heading text-2xl font-bold">Conteúdo Programático</h2>
+          <h2 className="font-heading text-2xl font-bold">Disciplinas</h2>
           <ol className="mt-6 space-y-4">
             {course.curriculum.map((item, i) => (
               <li key={item} className="flex gap-4">

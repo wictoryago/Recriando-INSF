@@ -53,10 +53,29 @@ function CoursesPage() {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {course.summary}
               </p>
-              <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                <span>{course.workload}</span>
-                <span>{course.duration}</span>
-              </div>
+              <dl className="mt-4 grid gap-1.5 text-xs text-muted-foreground">
+                <div className="flex justify-between gap-3">
+                  <dt>Carga horária</dt>
+                  <dd className="text-foreground">{course.workload}</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt>Duração</dt>
+                  <dd className="text-right text-foreground">{course.duration}</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt>Período</dt>
+                  <dd className="text-foreground">{course.schedule}</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt>Requisitos</dt>
+                  <dd className="text-right text-foreground">{course.requirements}</dd>
+                </div>
+              </dl>
+              {course.availability && (
+                <p className="mt-3 rounded-xl border border-gold/30 px-3 py-2 text-xs text-gold">
+                  {course.availability}
+                </p>
+              )}
               <Link
                 to="/cursos/$slug"
                 params={{ slug: course.slug }}

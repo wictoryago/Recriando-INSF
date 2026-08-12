@@ -4,6 +4,8 @@ import { toast } from "sonner";
 import { Copy, Check, HeartHandshake } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { site } from "@/data/site";
+import { buildPixPayload } from "@/lib/pix";
+import { PixQrCode } from "@/components/site/PixQrCode";
 
 export const Route = createFileRoute("/apoie")({
   head: () => ({
@@ -32,6 +34,12 @@ const impact = [
 
 function DonatePage() {
   const pixKey = site.email;
+  const pixPayload = buildPixPayload({
+    key: pixKey,
+    merchantName: site.shortName,
+    merchantCity: "SAO PAULO",
+    description: "Doacao Instituto",
+  });
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -42,6 +50,15 @@ function DonatePage() {
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
       toast.error("Não foi possível copiar. Copie manualmente a chave.");
+    }
+  };
+
+  const copyPayload = async () => {
+    try {
+      await navigator.clipboard.writeText(pixPayload);
+      toast.success("Código PIX copiado!");
+    } catch {
+      toast.error("Não foi possível copiar o código PIX.");
     }
   };
 
@@ -77,6 +94,45 @@ function DonatePage() {
               {copied ? "Copiado" : "Copiar"}
             </button>
           </div>
+          <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl border border-glass-border bg-navy-deep/50 p-6 sm:flex-row sm:items-center">
+            <PixQrCode payload={pixPayload} />
+            <div className="text-center sm:text-left">
+              <h3 className="font-heading text-lg font-bold">Aponte a câmera do seu banco</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Leia o QR Code no app do seu banco e informe o valor que desejar. Se
+                preferir, use o código PIX copia e cola.
+              </p>
+              <button
+                type="button"
+                onClick={copyPayload}
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-glass-border px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-secondary"
+              >
+                <Copy className="size-4" />
+                Copiar código PIX
+              </button>
+              <p className="mt-3 text-sm">
+                <button
+                  type="button"
+                  onClick={copyPayload}
+                  className="text-gold underline underline-offset-4 hover:text-gold-soft"
+                >
+                  Não consegue ler o QR Code? Clique aqui
+                </button>{" "}
+                <span className="text-muted-foreground">
+                  para copiar o mesmo código e colar no app do seu banco.
+                </span>
+              </p>
+              <details className="mt-3 text-left text-xs text-muted-foreground">
+                <summary className="cursor-pointer text-gold">
+                  Ver o código PIX completo
+                </summary>
+                <p className="mt-2 break-all rounded-xl border border-glass-border bg-navy-deep/60 p-3 font-mono">
+                  {pixPayload}
+                </p>
+              </details>
+            </div>
+          </div>
+
           <a
             href={site.whatsappHref}
             target="_blank"

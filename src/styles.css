@@ -81,6 +81,9 @@
   --gold-soft: oklch(0.878 0.111 79);
   --glass: oklch(1 0 0 / 5%);
   --glass-border: oklch(1 0 0 / 15%);
+  --nav-surface: oklch(0.185 0.038 265.7);
+  --nav-border: oklch(1 0 0 / 22%);
+
 
   --background: oklch(0.208 0.04 265.7);
   --foreground: oklch(0.984 0.003 247.9);
@@ -168,9 +171,18 @@
   background: var(--glass);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-glass);
 }
+
+/* Navigation surface: far less transparent than the glass cards so the
+   menu labels stay legible over any section behind them. */
+@utility nav-panel {
+  background: var(--nav-surface);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-glass);
+}
+
 
 @utility text-gradient-gold {
   background: var(--gradient-gold);
